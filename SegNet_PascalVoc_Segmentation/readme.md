@@ -11,22 +11,18 @@ We present a novel and practical deep fully convolutional neural network archite
 
 ### About the implementation
 
-The dataset masks are in RLE format. So firest this rle format is converted into image mask of numpy array and then used ofr training. 
-- data.py : This .py file pre-processes the RLE(.csv) file and produces numpy array of image mask. This file also pre-processes the input image into numpy array.
-- utils.py : This .py file contains functions that are used to create U-net network.
-- unet.py : Actual implementation of U-net architecture.
-- main.py : This file is used for training the U-net on Sartorius Cell Segmentation dataset.
-- train.csv: Train masks in RLE format.
+The dataset masks are one-hot encoded into shape [height,width,number of classes]. Description of each files.
+- pascal_voc.py : This .py file pre-processes the PASCAL VOC datset file and produces one-hot encoded numpy array of image mask. This file also pre-processes the input image into numpy array.
+- network.py : This .py file contains functions that are used to create SegNet network.
+- utils.py : Implementation of utils functions used for SegNet Network.
+- main.py : This file is used for training the Segnet on PASCAL VOC 2012.
+
 
 ### Result
 
-![alt text](Output/cell_types.PNG)
-
-**LOSS**
-
-![alt_test](Output/loss.PNG)
+![alt text](outputs/project_fig.png)
 
 
 ### Conclusion
 
-This project is on a implementation of U-net on a Multi-class Segmentation problem.
+This project is on a implementation of SegNet on a Multi-class Segmentation problem.
